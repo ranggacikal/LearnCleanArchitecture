@@ -71,7 +71,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun handleSuccessLogin(loginEntity: LoginEntity) {
 
-        showToast("Welcome ${loginEntity.name}")
+        showToast("Welcome ${loginEntity.nama_lengkap}")
         goToMainActivity()
 
     }

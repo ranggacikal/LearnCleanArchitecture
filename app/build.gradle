@@ -18,7 +18,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField 'String', 'API_BASE_URL',
-                '"https://golang-heroku.herokuapp.com/api/"'
+                '"http://fajar-fotocopy.com/backend_learning/index.php/Api_learning/"'
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments += ["room.schemaLocation": "$projectDir/schemas".toString()]

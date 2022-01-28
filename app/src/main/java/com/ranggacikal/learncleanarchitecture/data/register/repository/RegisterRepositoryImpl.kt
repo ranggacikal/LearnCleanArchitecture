@@ -19,21 +19,21 @@ class RegisterRepositoryImpl @Inject constructor(private val registerApi: Regist
     override suspend fun register(registerRequest: RegisterRequest): Flow<BaseResult<RegisterEntity,
             WrappedResponse<RegisterResponse>>> {
         return flow {
-            val response = registerApi.register(registerRequest)
-            if (response.isSuccessful) {
-                val body = response.body()!!
-                val registerEntity = RegisterEntity(
-                    body.data?.id!!, body.data?.name!!,
-                    body.data?.email!!, body.data?.token!!
-                )
-                emit(BaseResult.Success(registerEntity))
-            } else {
-                val type = object : TypeToken<WrappedResponse<RegisterResponse>>() {}.type
-                val err: WrappedResponse<RegisterResponse> =
-                    Gson().fromJson(response.errorBody()!!.charStream(), type)
-                err.code = response.code()
-                emit(BaseResult.Error(err))
-            }
+//            val response = registerApi.register(registerRequest)
+//            if (response.isSuccessful) {
+//                val body = response.body()!!
+//                val registerEntity = RegisterEntity(
+//                    body.data?.id!!, body.data?.name!!,
+//                    body.data?.email!!, body.data?.token!!
+//                )
+//                emit(BaseResult.Success(registerEntity))
+//            } else {
+//                val type = object : TypeToken<WrappedResponse<RegisterResponse>>() {}.type
+//                val err: WrappedResponse<RegisterResponse> =
+//                    Gson().fromJson(response.errorBody()!!.charStream(), type)
+//                err.code = response.code()
+//                emit(BaseResult.Error(err))
+//            }
         }
     }
 }
