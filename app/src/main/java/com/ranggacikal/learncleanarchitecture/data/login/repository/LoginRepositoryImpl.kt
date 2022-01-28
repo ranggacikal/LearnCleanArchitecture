@@ -44,6 +44,7 @@ class LoginRepositoryImpl @Inject constructor(private val loginApi: LoginApi) : 
                             .charStream(), type
                     )
                     Log.d("cekStatus", "body.error: $err")
+                    Log.d("cekStatus", "body.error: $err")
                     err.code = response.code()
                     emit(BaseResult.Error(err))
                 }
